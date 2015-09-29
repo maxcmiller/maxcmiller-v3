@@ -3,7 +3,7 @@ mixin rating(stars, content)
 	li
 		span.skills__list__stars
 			while n < stars
-				span.skills__list__stars__star
+				span.skills__list__stars__star.animated.hidden
 					svg
 						use(xlink:href="#icon-star")
 				- n++
@@ -16,9 +16,10 @@ html(lang="en")
 		meta(name="viewport", content="width=device-width, initial-scale=1")
 		link(rel="stylesheet", href="css/dist/main.css")
 		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Source+Code+Pro")
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
 	body
 		include img/bundle.svg
-		.row
+		.row#top
 			.col-golden-large
 				section.hero
 					.hero__content
@@ -76,10 +77,15 @@ html(lang="en")
 					span.portfolio__item__description__date March 2015 - present
 					a.button.button--primary(href="http://www.metalithic.com.au") Visit website
 				.col-6.portfolio__item__image
-					img(src="img/metalithic.jpg", alt="Metalithic (metalithic.com.au)")
+					a(href="img/metalithic.jpg", data-lightbox="metalithic", data-title="Home page")
+						img(src="img/metalithic.jpg", alt="Metalithic (metalithic.com.au)")
+					a.hidden(href="img/metalithic2.jpg", data-lightbox="metalithic", data-title="Gallery page")
+					a.hidden(href="img/metalithic3.jpg", data-lightbox="metalithic", data-title="Product page")
 			.row.portfolio__item
 				.col-6.portfolio__item__image
-					img(src="img/craftoid.jpg", alt="Craftoid")
+					a(href="img/craftoid.jpg", data-lightbox="craftoid", data-title="Craftoid, a web app for sharing creations in the PC game Robocraft.")
+						img(src="img/craftoid.jpg", alt="Craftoid")
+					a.hidden(href="img/craftoid2.jpg", data-lightbox="craftoid", data-title="Robot page")
 				.col-6.portfolio__item__description.mobile-lower-order
 					h2 Craftoid
 					h3 Design and development
@@ -97,12 +103,14 @@ html(lang="en")
 					span.portfolio__item__description__date September 2013 - March 2014
 					a.button.button--primary(href="http://www.metalithic.com.au") Visit website
 				.col-6.portfolio__item__image
-					img(src="img/atomicrushf1.jpg", alt="Atomic Rush F1")
+					a(href="img/atomicrushf1.jpg", data-lightbox="atomicrushf1", data-title="Home page of the Atomic Rush F1 website.")
+						img(src="img/atomicrushf1.jpg", alt="Atomic Rush F1")
 		section.footer
 			a.button.button--white(href="#") Get in touch
 			div.footer__bottom
-				a(href="#").footer__bottom__logo
+				a(href="#top").footer__bottom__logo
 					svg
 						use(xlink:href="#icon-logo-white")
 				span.footer__bottom__copyright &copy; Max C Miller 2015
-				
+
+				script(src="js/dist/script.min.js")

@@ -1,0 +1,21 @@
+{
+  "name": "maxcmiller-new",
+  "version": "0.1.0",
+  "homepage": "https://github.com/einkelflugle/maxcmiller-new",
+  "authors": [
+    "einkelflugle <cluckyferret@gmail.com>"
+  ],
+  "description": "Personal website and portfolio of Max C Miller.",
+  "main": "index.jade",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lightbox2": "~2.8.1"
+  }
+}
