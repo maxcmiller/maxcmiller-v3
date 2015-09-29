@@ -1,0 +1,22 @@
+.button
+	color: black
+	text-decoration: none
+	border: 3px solid black
+	padding: 10px 50px
+	margin-bottom: 10px
+	font-size: 1.375em
+	text-align: center
+	@media(max-width: 1200px)
+		padding: 10px 20px
+	@media(max-width: 650px)
+		font-size: 1em
+
+	&--white
+		color: white
+		border: 3px solid white
+		&:hover
+			background-color: white
+			color: black
+	&--primary
+		color: white
+		background-color: black

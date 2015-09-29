@@ -1,0 +1,47 @@
+html, body
+	margin: 0
+	padding: 0
+	border: none
+	font-family: "Source Code Pro", monospace
+	color: #111
+	letter-spacing: -1px
+	-webkit-font-smoothing: antialiased
+	line-height: 1.4
+
+h2
+	font-weight: normal
+	font-size: 1.75em
+	@media(max-width: 650px)
+		font-size: 1.5em
+
+h3
+	font-weight: normal
+	font-size: 1.5em
+	color: #888
+	margin: 0.8em 0
+
+p
+	font-size: 1.1em
+	line-height: 1.6
+	@media(max-width: 650px)
+		font-size: 0.8em
+
+*
+	box-sizing: border-box
+
+.text
+	margin-top: 50px
+	margin-left: 100px
+	max-width: 700px
+	margin-right: auto
+	padding-right: 50px
+	@media(max-width: 1200px)
+		margin-left: 50px
+		font-size: 0.9em
+	@media(max-width: 650px)
+		margin: 20px 0 0 20px
+		padding-right: 10px
+
+.mobile-lower-order
+	@media(max-width: 650px)
+		order: -1

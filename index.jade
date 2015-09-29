@@ -1,0 +1,107 @@
+mixin rating(stars, content)
+	- var n = 0
+	li
+		span.skills__list__stars
+			while n < stars
+				span.skills__list__stars__star
+					svg
+						use(xlink:href="#icon-star")
+				- n++
+		=content
+
+html(lang="en")
+	head
+		title Max C Miller
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		link(rel="stylesheet", href="css/dist/main.css")
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Source+Code+Pro")
+	body
+		include img/bundle.svg
+		.row
+			.col-golden-large
+				section.hero
+					.hero__content
+						a.hero__content__logo(href="#")
+							svg
+								use(xlink:href="#icon-logo-white")
+						a.button.button--white(href="#portfolio") View my portfolio
+			.col-golden-small
+				section.intro
+					h2.intro__text Hey, I’m <span>Max Miller</span>, a <span>student</span>, <span>developer</span> and <span>web designer</span> from <span>Brisbane, Australia</span>.
+					ul.intro__icons
+						//- Designed by Freepik
+						li.intro__icons__icon
+							a(href="#")
+								svg
+									use(xlink:href="#icon-github")
+						li.intro__icons__icon
+							a(href="#")
+								svg
+									use(xlink:href="#icon-twitter")
+						li.intro__icons__icon
+							a(href="mailto:maxcharlesmiller@icloud.com")
+								svg
+									use(xlink:href="#icon-email")
+		.row.about
+			.col-golden-large
+				.text
+					h2 About me
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit hic, sit dolores officia, ipsam distinctio, consequatur reprehenderit repellendus fugit necessitatibus ea placeat pariatur ab iure nihil in a quisquam voluptas.
+			.col-golden-small
+				.row
+					.col-6
+						img.about__image(src="img/profile.jpg", alt="Max C Miller")
+		.row.skills
+			.col-golden-small
+				.text
+					h2 Skills
+					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ad eveniet sint voluptatum consectetur, atque libero esse aliquam totam. Sequi.
+					ul.skills__list
+						+rating(5, 'HTML & CSS')
+						+rating(4, 'Ruby on Rails')
+						+rating(3, 'Javascript')
+						+rating(4, 'Java')
+			.col-golden-large.skills__background
+		section.cta
+			a.button.pull-right(href="#") Download resume
+			a.button.button--primary(href="#") Get in touch
+		section.portfolio#portfolio
+			.row.portfolio__item
+				.col-6.portfolio__item__description
+					h2 Metalithic
+					h3 Design and development
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus quam exercitationem perferendis sed quasi, odit enim officia praesentium sint.
+					p Incidunt est dolorum deserunt ipsam blanditiis ratione velit labore debitis error sequi accusantium obcaecati voluptatibus non! Ipsam officia, deleniti quam repudiandae.
+					span.portfolio__item__description__date March 2015 - present
+					a.button.button--primary(href="http://www.metalithic.com.au") Visit website
+				.col-6.portfolio__item__image
+					img(src="img/metalithic.jpg", alt="Metalithic (metalithic.com.au)")
+			.row.portfolio__item
+				.col-6.portfolio__item__image
+					img(src="img/craftoid.jpg", alt="Craftoid")
+				.col-6.portfolio__item__description.mobile-lower-order
+					h2 Craftoid
+					h3 Design and development
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus quam exercitationem perferendis sed quasi, odit enim officia praesentium sint.
+					p Incidunt est dolorum deserunt ipsam blanditiis ratione velit labore debitis error sequi accusantium obcaecati voluptatibus non! Ipsam officia, deleniti quam repudiandae.
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut dolorem possimus mollitia quibusdam nemo!
+					span.portfolio__item__description__date September 2014
+					a.button.button--primary(href="http://github.com/einkelflugle/craftoid") View GitHub repo
+			.row.portfolio__item
+				.col-6.portfolio__item__description
+					h2 Atomic Rush F1
+					h3 Marketing and design
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus quam exercitationem perferendis sed quasi, odit enim officia praesentium sint.
+					p Incidunt est dolorum deserunt ipsam blanditiis ratione velit labore debitis error sequi accusantium obcaecati voluptatibus non! Ipsam officia, deleniti quam repudiandae.
+					span.portfolio__item__description__date September 2013 - March 2014
+					a.button.button--primary(href="http://www.metalithic.com.au") Visit website
+				.col-6.portfolio__item__image
+					img(src="img/atomicrushf1.jpg", alt="Atomic Rush F1")
+		section.footer
+			a.button.button--white(href="#") Get in touch
+			div.footer__bottom
+				a(href="#").footer__bottom__logo
+					svg
+						use(xlink:href="#icon-logo-white")
+				span.footer__bottom__copyright &copy; Max C Miller 2015
+				
