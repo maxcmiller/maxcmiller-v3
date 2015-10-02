@@ -60,7 +60,7 @@ module.exports = function(grunt) {
         },
         watch: {
             html: {
-                files: ['index.jade'],
+                files: ['index.jade', 'favicons/favicons.jade'],
                 tasks: ['jade'],
                 options: {
                     livereload: true
