@@ -1,9 +1,9 @@
 mixin rating(stars, content)
 	- var n = 0
-	li
+	li.animated.hidden
 		span.skills__list__stars
 			while n < stars
-				span.skills__list__stars__star.animated.hidden
+				span.skills__list__stars__star
 					svg
 						use(xlink:href="#icon-star")
 				- n++
@@ -17,21 +17,7 @@ html(lang="en")
 		meta(name="viewport", content="width=device-width, initial-scale=1")
 		link(rel="stylesheet", href="css/dist/main.css")
 		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Source+Code+Pro")
-		link(rel="apple-touch-icon", sizes="57x57", href="/favicons/apple-touch-icon-57x57.png?v=2")
-		link(rel="apple-touch-icon", sizes="60x60", href="/favicons/apple-touch-icon-60x60.png?v=2")
-		link(rel="apple-touch-icon", sizes="72x72", href="/favicons/apple-touch-icon-72x72.png?v=2")
-		link(rel="apple-touch-icon", sizes="76x76", href="/favicons/apple-touch-icon-76x76.png?v=2")
-		link(rel="apple-touch-icon", sizes="114x114", href="/favicons/apple-touch-icon-114x114.png?v=2")
-		link(rel="apple-touch-icon", sizes="120x120", href="/favicons/apple-touch-icon-120x120.png?v=2")
-		link(rel="apple-touch-icon", sizes="144x144", href="/favicons/apple-touch-icon-144x144.png?v=2")
-		link(rel="apple-touch-icon", sizes="152x152", href="/favicons/apple-touch-icon-152x152.png?v=2")
-		link(rel="apple-touch-icon", sizes="180x180", href="/favicons/apple-touch-icon-180x180.png?v=2")
-		link(rel="icon", type="image/png", href="/favicons/favicon-32x32.png?v=2", sizes="32x32")
-		link(rel="icon", type="image/png", href="/favicons/android-chrome-192x192.png?v=2", sizes="192x192")
-		link(rel="icon", type="image/png", href="/favicons/favicon-96x96.png?v=2", sizes="96x96")
-		link(rel="icon", type="image/png", href="/favicons/favicon-16x16.png?v=2", sizes="16x16")
-		link(rel="manifest", href="/favicons/manifest.json?v=2")
-		link(rel="shortcut icon", href="/favicons/favicon.ico?v=2")
+		include favicons/favicons.jade
 		meta(name="msapplication-TileColor", content="#d6b3a0")
 		meta(name="msapplication-TileImage", content="/favicons/mstile-144x144.png?v=2")
 		meta(name="msapplication-config", content="/favicons/browserconfig.xml?v=2")
@@ -53,11 +39,11 @@ html(lang="en")
 					ul.intro__icons
 						//- Designed by Freepik
 						li.intro__icons__icon
-							a(href="#")
+							a(href="http://github.com/einkelflugle")
 								svg
 									use(xlink:href="#icon-github")
 						li.intro__icons__icon
-							a(href="#")
+							a(href="http://twitter.com/max_cmiller")
 								svg
 									use(xlink:href="#icon-twitter")
 						li.intro__icons__icon
@@ -68,7 +54,8 @@ html(lang="en")
 			.col-golden-large
 				.text
 					h2 About me
-					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit hic, sit dolores officia, ipsam distinctio, consequatur reprehenderit repellendus fugit necessitatibus ea placeat pariatur ab iure nihil in a quisquam voluptas.
+					p My name is Max Miller, and I love to build websites. I specialise in crafting unique experiences that look great and function beautifully across all devices.
+					p I also love to code. Most of my projects are on <a href="http://github.com/einkelflugle">GitHub</a> if you'd like to check them out.
 			.col-golden-small
 				.row
 					.col-6
@@ -77,11 +64,12 @@ html(lang="en")
 			.col-golden-small
 				.text
 					h2 Skills
-					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ad eveniet sint voluptatum consectetur, atque libero esse aliquam totam. Sequi.
+					p I think it's very important to keep learning every day. That's why I'm always looking at better, faster and more efficient ways to do things, like picking up a new framework or using a new build tool.
+					p Here are a few of the technologies I work with:
 					ul.skills__list
 						+rating(5, 'HTML & CSS')
 						+rating(4, 'Ruby on Rails')
-						+rating(3, 'Javascript')
+						+rating(3, 'JavaScript')
 						+rating(4, 'Java')
 			.col-golden-large.skills__background
 		section.cta
@@ -91,9 +79,9 @@ html(lang="en")
 			.row.portfolio__item
 				.col-6.portfolio__item__description
 					h2 Metalithic
-					h3 Design and development
-					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus quam exercitationem perferendis sed quasi, odit enim officia praesentium sint.
-					p Incidunt est dolorum deserunt ipsam blanditiis ratione velit labore debitis error sequi accusantium obcaecati voluptatibus non! Ipsam officia, deleniti quam repudiandae.
+					h3 Design and front-end development
+					p Metalithic is an art studio from Perth, Western Australia. They desired a way to show off their handcrafted mixed-media pieces on the web. The website allows customers to view individual pieces through <a href="img/metalithic2.jpg" data-lightbox="metalithic" data-title="Gallery page">the gallery</a>, learn more about the fascinating process behind the pieces, and enquire about purchasing.
+					p The Metalithic site is built using a variety of modern web technologies. <a href="http://staceyapp.com">Stacey</a>, a PHP-based flat-file CMS, runs on the back end. I use <a href="http://sass-lang.com">Sass</a> as the preprocessor, which is compiled and minified by popular task runner <a href="http://gruntjs.com">Grunt</a>.
 					span.portfolio__item__description__date March 2015 - present
 					a.button.button--primary(href="http://www.metalithic.com.au") Visit website
 				.col-6.portfolio__item__image
@@ -108,25 +96,30 @@ html(lang="en")
 					a.hidden(href="img/craftoid2.jpg", data-lightbox="craftoid", data-title="Robot page")
 				.col-6.portfolio__item__description.mobile-lower-order
 					h2 Craftoid
-					h3 Design and development
-					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus quam exercitationem perferendis sed quasi, odit enim officia praesentium sint.
-					p Incidunt est dolorum deserunt ipsam blanditiis ratione velit labore debitis error sequi accusantium obcaecati voluptatibus non! Ipsam officia, deleniti quam repudiandae.
-					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut dolorem possimus mollitia quibusdam nemo!
-					span.portfolio__item__description__date September 2014
-					a.button.button--primary(href="http://github.com/einkelflugle/craftoid") View GitHub repo
+					h3 Design, front- and back-end development
+					p Craftoid is a web application for the popular indie game <a href="http://robocraftgame.com">Robocraft</a>. It allows users to share their awesome creations made with the in-game editor. Some of the main features include:
+					ul
+						li Sign in and Sign up
+						li Competitions with voting on submissions
+						li Ability to 'favourite' other users' creations
+						li Browse creations by time, popularity, Tier, or category
+						li Submit comments
+					p The application is built on <a href="http://rubyonrails.org">Ruby on Rails</a>, with a <a href="http://www.postgresql.org">PostgreSQL</a> database. I used <a href="http://heroku.com">heroku</a> for deployment, and the entire application and related assets are managed with <a href="http://git-scm.com">Git</a> version control.
+					span.portfolio__item__description__date August - September 2014
+					a.button.button--primary(href="http://github.com/einkelflugle/craftoid") View GitHub repository
 			.row.portfolio__item
 				.col-6.portfolio__item__description
 					h2 Atomic Rush F1
-					h3 Marketing and design
-					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus quam exercitationem perferendis sed quasi, odit enim officia praesentium sint.
-					p Incidunt est dolorum deserunt ipsam blanditiis ratione velit labore debitis error sequi accusantium obcaecati voluptatibus non! Ipsam officia, deleniti quam repudiandae.
+					h3 Front-end development and marketing
+					p Atomic Rush was school team in the <a href="http://rea.org.au/f1-in-schools/">F1 in Schools</a> Technology Challenge. As Marketing Advisor, my role involved presenting our team's image to potential sponsors and the general public.
+					p A major part of my role was developing, promoting and maintaining our website. The site allowed users to view information about the team, our sponsors, and upcoming events, as well as contact our team via email or Facebook.
 					span.portfolio__item__description__date September 2013 - March 2014
 					a.button.button--primary(href="http://www.metalithic.com.au") Visit website
 				.col-6.portfolio__item__image
 					a(href="img/atomicrushf1.jpg", data-lightbox="atomicrushf1", data-title="Home page of the Atomic Rush F1 website.")
 						img(src="img/atomicrushf1.jpg", alt="Atomic Rush F1")
 		section.footer
-			a.button.button--white(href="#") Get in touch
+			a.button.button--white(href="mailto:maxcharlesmiller@icloud.com") Get in touch
 			div.footer__bottom
 				a(href="#top").footer__bottom__logo
 					svg

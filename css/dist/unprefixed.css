@@ -18,16 +18,29 @@ h2 {
 
 h3 {
   font-weight: normal;
-  font-size: 1.5em;
+  font-size: 1.4em;
   color: #888;
   margin: 0.8em 0; }
-
-p {
-  font-size: 1.1em;
-  line-height: 1.6; }
   @media (max-width: 650px) {
-    p {
-      font-size: 0.8em; } }
+    h3 {
+      font-size: 1.2em;
+      margin: 0.4em 0; } }
+
+p, p + ul li {
+  font-size: 1.1em;
+  line-height: 1.6;
+  font-family: Georgia, "Palatino Linotype", serif;
+  -webkit-font-smoothing: auto;
+  color: #353535;
+  letter-spacing: 0; }
+  @media (max-width: 650px) {
+    p, p + ul li {
+      font-size: 0.9em; } }
+
+p a {
+  color: #888;
+  text-decoration: none;
+  border-bottom: 1px solid #888; }
 
 * {
   box-sizing: border-box; }
@@ -180,11 +193,13 @@ p {
           .hero__content__logo svg {
             height: 50px; } }
 
-@media (max-width: 650px) {
-  .about__image {
-    display: block;
-    margin: auto;
-    width: 30%; } }
+.about__image {
+  display: block;
+  height: 100%; }
+  @media (max-width: 650px) {
+    .about__image {
+      margin: auto;
+      width: 30%; } }
 
 @media (max-width: 1200px) {
   .skills > div {
@@ -210,7 +225,9 @@ p {
         height: 24px; }
   .skills__list li {
     font-size: 1.2em;
-    padding: 10px 0; }
+    padding: 10px 0;
+    font-family: "Source Code Pro", monospace;
+    -webkit-font-smoothing: antialiased; }
 
 .cta {
   display: flex;

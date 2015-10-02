@@ -36,19 +36,19 @@ $(document).ready(function() {
 function scrollHandler() {
 	// Hero animation
 	heroHeight = $hero.height()
-	if (scroll < heroHeight) {
+	if (scroll < heroHeight && scroll > 0) {
 		applyTranslate($heroContent, scroll / 3, direction.y)
 	}
 	applyFade($heroContent, scroll / heroHeight)
 
 	// Stars animation
 	if (window.innerHeight + scroll >= $skills.offset().top + $skills.height()) {
-		$skillsList.find('.skills__list__stars__star').each(function(i) {
-			var $star = $(this)
+		$skillsList.find('li').each(function(i) {
+			var $item = $(this)
 			setTimeout(function() {
-				$star.addClass('fadeInRight')
-				$star.removeClass('hidden')
-			}, 50 * i)
+				$item.addClass('fadeInLeft')
+				$item.removeClass('hidden')
+			}, 100 * i)
 		})
 	}
 }
