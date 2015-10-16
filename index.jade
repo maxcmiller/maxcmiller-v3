@@ -19,6 +19,11 @@ html(lang="en")
 		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Source+Code+Pro")
 		include favicons/favicons.jade
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+		script.
+			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+			ga('create', 'UA-43854911-1', 'auto');
+			ga('send', 'pageview');
+		script(async src="//www.google-analytics.com/analytics.js")
 	body
 		include img/bundle.svg
 		.row#top
