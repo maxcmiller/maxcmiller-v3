@@ -1,0 +1,18 @@
+.button-group
+  display: flex
+  margin-bottom: 10px
+  &--js
+    body.noscript &
+      display: none
+  &--center
+    justify-content: center
+  &--small
+    .button
+      font-size: 1.1em
+      padding: 5px 20px
+  & .button
+    margin-bottom: 0
+    border-right: none
+    transition: 0.3s background-color ease-in-out
+    &:last-child
+      border-right: 3px solid black

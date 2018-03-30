@@ -373,6 +373,23 @@ p a {
     color: white;
     background-color: black; }
 
+.button-group {
+  display: flex;
+  margin-bottom: 10px; }
+  body.noscript .button-group--js {
+    display: none; }
+  .button-group--center {
+    justify-content: center; }
+  .button-group--small .button {
+    font-size: 1.1em;
+    padding: 5px 20px; }
+  .button-group .button {
+    margin-bottom: 0;
+    border-right: none;
+    transition: 0.3s background-color ease-in-out; }
+    .button-group .button:last-child {
+      border-right: 3px solid black; }
+
 /*!
 Animate.css - http://daneden.me/animate
 Licensed under the MIT license - http://opensource.org/licenses/MIT

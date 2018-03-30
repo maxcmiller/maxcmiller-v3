@@ -24,7 +24,9 @@ html(lang="en")
 			ga('create', 'UA-43854911-1', 'auto');
 			ga('send', 'pageview');
 		script(async src="//www.google-analytics.com/analytics.js")
-	body
+	body.noscript
+		script.
+			$('body').removeClass('noscript');
 		include img/bundle.svg
 		.row#top
 			.col-golden-large
@@ -55,8 +57,8 @@ html(lang="en")
 			.col-golden-large
 				.text
 					h2 About me
-					p My name is Max Miller, and I love to build websites. I specialise in crafting unique experiences that look great and function beautifully across all devices.
-					p I also love to code. Most of my projects are on <a href="http://github.com/einkelflugle">GitHub</a> if you'd like to check them out.
+					p My name is Max Miller, and I enjoy building websites. I specialise in creating unique experiences that look great and function beautifully across all devices.
+					p I also love to code. Most of my projects are on <a href="http://github.com/einkelflugle">GitHub</a> if you'd like to check them out. <i>Warning: projects are in varying stages of completeness!</i>
 			.col-golden-small
 				.row
 					.col-6
@@ -65,7 +67,7 @@ html(lang="en")
 			.col-golden-small
 				.text
 					h2 Skills
-					p I think it's very important to keep learning every day. That's why I'm always looking at better, faster and more efficient ways to do things, like picking up a new framework or using a new build tool.
+					p I think it's important to keep learning every day. That's why I'm always looking at better, faster and more efficient ways to do things, like picking up a new framework or using a new build tool.
 					p Here are a few of the technologies I work with:
 					ul.skills__list
 						+rating(5, 'HTML & CSS')
@@ -81,15 +83,21 @@ html(lang="en")
 				.col-6.portfolio__item__description
 					h2 Metalithic
 					h3 Design and front-end development
-					p Metalithic is an art studio from Perth, Western Australia. They desired a way to show off their handcrafted mixed-media pieces on the web. The website allows customers to view individual pieces through <a href="img/metalithic2.jpg" data-lightbox="metalithic" data-title="Gallery page">the gallery</a>, learn more about the fascinating process behind the pieces, and enquire about purchasing.
-					p The Metalithic site is built using a variety of modern web technologies. <a href="http://staceyapp.com">Stacey</a>, a PHP-based flat-file CMS, runs on the back end. I use <a href="http://sass-lang.com">Sass</a> as the preprocessor, which is compiled and minified by popular task runner <a href="http://gruntjs.com">Grunt</a>.
+					p Metalithic is an art studio from Perth, Western Australia. They desired a way to show off their handcrafted mixed-media pieces on the web. The website allows customers to view individual pieces through <a href="img/metalithic2_v2.jpg" data-lightbox="metalithic" data-title="Gallery page">the gallery</a>, learn more about the fascinating process behind the pieces, and enquire about purchasing.
+					.button-group.button-group--center.button-group--js.button-group--small(aria-label="Select version of website")
+						a.button.button--primary(href="#0", id="show_metalithic_v1") v1
+						a.button(href="#0", id="show_metalithic_v2") v2
+					p#metalithic_v1 The initial version of the Metalithic site was built using a variety of modern web technologies. <a href="http://staceyapp.com">Stacey</a>, a PHP-based flat-file CMS, was used for the back end. I used <a href="http://sass-lang.com">Sass</a> as the preprocessor, compiled and minified by powerful task runner <a href="http://gruntjs.com">Grunt</a>.
+					span#metalithic_v2
+						p In 2018, the site was upgraded to use <a href="http://wordpress.org">WordPress</a>. This involved developing a custom WP theme for the site based on <a href="http://getbootstrap.com">Bootstrap</a>. The upgraded site utilises Google reCAPTCHA and SendGrid for better contact form notifications.
+						p I improved performance dramatically by leveraging WordPress caching and browser caching, compressing all assets with Apache's mod_deflate, and minifying CSS and JavaScript files.
 					span.portfolio__item__description__date March 2015 - present
 					a.button.button--primary(href="http://www.metalithic.com.au") Visit website
 				.col-6.portfolio__item__image
-					a(href="img/metalithic.jpg", data-lightbox="metalithic", data-title="Home page")
-						img(src="img/metalithic.jpg", alt="Metalithic (metalithic.com.au)")
-					a.hidden(href="img/metalithic2.jpg", data-lightbox="metalithic", data-title="Gallery page")
-					a.hidden(href="img/metalithic3.jpg", data-lightbox="metalithic", data-title="Product page")
+					a(href="img/metalithic_v2.jpg", data-lightbox="metalithic", data-title="Home page")
+						img(src="img/metalithic_v2.jpg", alt="Metalithic (metalithic.com.au)")
+					a.hidden(href="img/metalithic2_v2.jpg", data-lightbox="metalithic", data-title="Gallery page")
+					a.hidden(href="img/metalithic3_v2.jpg", data-lightbox="metalithic", data-title="Product page")
 			.row.portfolio__item
 				.col-6.portfolio__item__image
 					a(href="img/craftoid.jpg", data-lightbox="craftoid", data-title="Craftoid, a web app for sharing creations in the PC game Robocraft.")
