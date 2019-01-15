@@ -16,13 +16,8 @@ html(lang="en")
 		meta(charset="UTF-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1")
 		link(rel="stylesheet", href="css/dist/main.css")
-		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Source+Code+Pro")
 		include favicons/favicons.jade
-		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
-		script.
-			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-			ga('create', 'UA-43854911-1', 'auto');
-			ga('send', 'pageview');
+		script(src="js/dist/jquery.min.js")
 		script(async src="//www.google-analytics.com/analytics.js")
 	body.noscript
 		script.
@@ -132,6 +127,5 @@ html(lang="en")
 				a(href="#top").footer__bottom__logo
 					svg
 						use(xlink:href="#icon-logo-white")
-				span.footer__bottom__copyright &copy; Max C Miller 2017
-
-				script(src="js/dist/script.min.js")
+				span.footer__bottom__copyright &copy; Max C Miller 2019
+		script(src="js/dist/script.min.js")

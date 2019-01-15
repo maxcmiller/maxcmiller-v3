@@ -5,13 +5,19 @@ module.exports = function(grunt) {
         connect: {
             server: {
                 options: {
-                    port: 8080
+                    hostname: 'localhost',
+                    livereload: true,
+                    open: true
                 }
             }
         },
         uglify: {
+            jquery: {
+                src: ['js/libs/jquery-2.1.4.min.js'],
+                dest: 'js/dist/jquery.min.js'
+            },
             dist: {
-                src: ['js/libs/*.js', 'js/src/**/*.js'],
+                src: ['js/libs/lightbox.js', 'js/src/**/*.js'],
                 dest: 'js/dist/script.min.js'
             }
         },
@@ -59,39 +65,31 @@ module.exports = function(grunt) {
             },
         },
         watch: {
+            options: {
+                livereload: true
+            },
             html: {
                 files: ['index.jade', 'favicons/favicons.jade'],
-                tasks: ['jade'],
-                options: {
-                    livereload: true
-                }
+                tasks: ['jade']
             },
             css: {
-                files: ['css/libs/*.css', 'css/src/**/*.sass'],
-                tasks: ['sass', 'autoprefixer'],
-                options: {
-                    livereload: true
-                }
+                files: ['css/libs/*.css', 'css/src/**/*.sass',
+                    'css/src/**/*.scss'],
+                tasks: ['sass', 'autoprefixer']
             },
             javascript: {
                 files: ['js/src/*.js', 'js/libs/*.js'],
-                tasks: ['uglify'],
-                options: {
-                    livereload: true
-                }
+                tasks: ['uglify']
             },
             images: {
-                files: ['img/**/*'],
-                options: {
-                    livereload: true
-                }
+                files: ['img/**/*']
+            },
+            fonts: {
+                files: ['fonts/**/*']
             },
             svg: {
                 files: ['svg/*.svg'],
-                tasks: ['svgstore', 'jade'],
-                options: {
-                    livereload: true
-                }
+                tasks: ['svgstore', 'jade']
             }
         }
     });
