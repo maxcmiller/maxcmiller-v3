@@ -15,14 +15,11 @@ html(lang="en")
 		title Max C Miller
 		meta(charset="UTF-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1")
-		link(rel="stylesheet", href="css/dist/main.css")
-		include favicons/favicons.jade
-		script(src="js/dist/jquery.min.js")
+		link(rel="stylesheet", href="main.css")
+		include partials/favicons.pug
 		script(async src="//www.google-analytics.com/analytics.js")
-	body.noscript
-		script.
-			$('body').removeClass('noscript');
-		include img/bundle.svg
+	body
+		include ../img/svg.svg
 		.row#top
 			.col-golden-large
 				section.hero
@@ -128,4 +125,4 @@ html(lang="en")
 					svg
 						use(xlink:href="#icon-logo-white")
 				span.footer__bottom__copyright &copy; Max C Miller 2019
-		script(src="js/dist/script.min.js")
+		script(src="bundle.js")

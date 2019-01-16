@@ -1,14 +1,47 @@
 {
-  "name": "maxcmiller-new",
-  "version": "0.1.0",
+  "name": "maxcmiller-v3",
+  "version": "3.1.0",
+  "description": "Version 3 of my personal website and portfolio.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp",
+    "dev": "gulp devbuild && gulp serve",
+    "clean": "gulp clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/einkelflugle/maxcmiller-v3.git"
+  },
+  "author": "Max C Miller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/einkelflugle/maxcmiller-v3/issues"
+  },
+  "homepage": "https://github.com/einkelflugle/maxcmiller-v3#readme",
   "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-autoprefixer": "^3.0.3",
-    "grunt-contrib-connect": "^0.8.0",
-    "grunt-contrib-jade": "^0.15.0",
-    "grunt-contrib-uglify": "^0.11.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-sass": "^1.0.0",
-    "grunt-svgstore": "^0.5.0"
+    "autoprefixer": "^9.4.5",
+    "browser-sync": "^2.26.3",
+    "cheerio": "^1.0.0-rc.2",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.8",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-cache": "^1.1.0",
+    "gulp-cheerio": "^0.6.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-deporder": "^1.1.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-postcss": "^8.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-strip-debug": "^3.0.0",
+    "gulp-svgmin": "^2.1.0",
+    "gulp-svgstore": "^7.0.1",
+    "gulp-uglify": "^3.0.1",
+    "through2": "^3.0.0"
   }
 }
