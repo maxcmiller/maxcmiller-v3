@@ -1,128 +1,128 @@
 mixin rating(stars, content)
-	- var n = 0
-	li.animated.hidden
-		span.skills__list__stars
-			while n < stars
-				span.skills__list__stars__star
-					svg
-						use(xlink:href="#icon-star")
-				- n++
-		=content
+  - var n = 0
+  li.animated.hidden
+    span.skills__list__stars
+      while n < stars
+        span.skills__list__stars__star
+          svg
+            use(xlink:href="#icon-star")
+        - n++
+    =content
 
 doctype html
 html(lang="en")
-	head
-		title Max C Miller
-		meta(charset="UTF-8")
-		meta(name="viewport", content="width=device-width, initial-scale=1")
-		link(rel="stylesheet", href="main.css")
-		include partials/favicons.pug
-		script(async src="//www.google-analytics.com/analytics.js")
-	body
-		include ../img/svg.svg
-		.row#top
-			.col-golden-large
-				section.hero
-					.hero__content
-						a.hero__content__logo(href="#")
-							svg
-								use(xlink:href="#icon-logo-white")
-						a.button.button--white(href="#portfolio") View my portfolio
-			.col-golden-small
-				section.intro
-					h2.intro__text Hey, I'm <span>Max Miller</span>, a <span>student</span>, <span>developer</span> and <span>web designer</span> from <span>Brisbane, Australia</span>.
-					ul.intro__icons
-						//- Designed by Freepik
-						li.intro__icons__icon
-							a(href="http://github.com/einkelflugle")
-								svg
-									use(xlink:href="#icon-github")
-						li.intro__icons__icon
-							a(href="http://twitter.com/max_cmiller")
-								svg
-									use(xlink:href="#icon-twitter")
-						li.intro__icons__icon
-							a(href="mailto:me@maxcmiller.com")
-								svg
-									use(xlink:href="#icon-email")
-		.row.about
-			.col-golden-large
-				.text
-					h2 About me
-					p My name is Max Miller, and I enjoy building websites. I specialise in creating unique experiences that look great and function beautifully across all devices.
-					p I also love to code. Most of my projects are on <a href="http://github.com/einkelflugle">GitHub</a> if you'd like to check them out. <i>Warning: projects are in varying stages of completeness!</i>
-			.col-golden-small
-				.row
-					.col-6
-						img.about__image(src="img/profile.jpg", alt="Max C Miller")
-		.row.skills
-			.col-golden-small
-				.text
-					h2 Skills
-					p I think it's important to keep learning every day. That's why I'm always looking at better, faster and more efficient ways to do things, like picking up a new framework or using a new build tool.
-					p Here are a few of the technologies I work with:
-					ul.skills__list
-						+rating(5, 'HTML & CSS')
-						+rating(4, 'Ruby on Rails')
-						+rating(3, 'JavaScript')
-						+rating(4, 'Java')
-			.col-golden-large.skills__background
-		section.cta
-			a.button.pull-right(href="http://github.com/einkelflugle") My GitHub
-			a.button.button--primary(href="mailto:me@maxcmiller.com") Get in touch
-		section.portfolio#portfolio
-			.row.portfolio__item
-				.col-6.portfolio__item__description
-					h2 Metalithic
-					h3 Design and front-end development
-					p Metalithic is an art studio from Perth, Western Australia. They desired a way to show off their handcrafted mixed-media pieces on the web. The website allows customers to view individual pieces through <a href="img/metalithic2_v2.jpg" data-lightbox="metalithic" data-title="Gallery page">the gallery</a>, learn more about the fascinating process behind the pieces, and enquire about purchasing.
-					.button-group.button-group--center.button-group--js.button-group--small(aria-label="Select version of website")
-						a.button.button--primary(href="#0", id="show_metalithic_v1") v1
-						a.button(href="#0", id="show_metalithic_v2") v2
-					p#metalithic_v1 The initial version of the Metalithic site was built using a variety of modern web technologies. <a href="http://staceyapp.com">Stacey</a>, a PHP-based flat-file CMS, was used for the back end. I used <a href="http://sass-lang.com">Sass</a> as the preprocessor, compiled and minified by powerful task runner <a href="http://gruntjs.com">Grunt</a>.
-					span#metalithic_v2
-						p In 2018, the site was upgraded to use <a href="http://wordpress.org">WordPress</a>. This involved developing a custom WP theme for the site based on <a href="http://getbootstrap.com">Bootstrap</a>. The upgraded site utilises Google reCAPTCHA and SendGrid for better contact form notifications.
-						p I improved performance dramatically by leveraging WordPress caching and browser caching, compressing all assets with Apache's mod_deflate, and minifying CSS and JavaScript files.
-					span.portfolio__item__description__date March 2015 - present
-					a.button.button--primary(href="http://www.metalithic.com.au") Visit website
-				.col-6.portfolio__item__image
-					a(href="img/metalithic_v2.jpg", data-lightbox="metalithic", data-title="Home page")
-						img(src="img/metalithic_v2.jpg", alt="Metalithic (metalithic.com.au)")
-					a.hidden(href="img/metalithic2_v2.jpg", data-lightbox="metalithic", data-title="Gallery page")
-					a.hidden(href="img/metalithic3_v2.jpg", data-lightbox="metalithic", data-title="Product page")
-			.row.portfolio__item
-				.col-6.portfolio__item__image
-					a(href="img/craftoid.jpg", data-lightbox="craftoid", data-title="Craftoid, a web app for sharing creations in the PC game Robocraft.")
-						img(src="img/craftoid.jpg", alt="Craftoid")
-					a.hidden(href="img/craftoid2.jpg", data-lightbox="craftoid", data-title="Robot page")
-				.col-6.portfolio__item__description.mobile-lower-order
-					h2 Craftoid
-					h3 Design, front- and back-end development
-					p Craftoid is a web application for the popular indie game <a href="http://robocraftgame.com">Robocraft</a>. It allows users to share their awesome creations made with the in-game editor. Some of the main features include:
-					ul
-						li Sign in and Sign up
-						li Competitions with voting on submissions
-						li Ability to 'favourite' other users' creations
-						li Browse creations by time, popularity, Tier, or category
-						li Submit comments
-					p The application is built on <a href="http://rubyonrails.org">Ruby on Rails</a>, with a <a href="http://www.postgresql.org">PostgreSQL</a> database. I used <a href="http://heroku.com">heroku</a> for deployment, and the entire application and related assets are managed with <a href="http://git-scm.com">Git</a> version control.
-					span.portfolio__item__description__date August - September 2014
-					a.button.button--primary(href="http://github.com/einkelflugle/craftoid") View GitHub repository
-			.row.portfolio__item
-				.col-6.portfolio__item__description
-					h2 Atomic Rush F1
-					h3 Front-end development and marketing
-					p Atomic Rush was a school team participating in the <a href="http://rea.org.au/f1-in-schools/">F1 in Schools</a> Technology Challenge. As Marketing Advisor, my role involved presenting our team's image to potential sponsors and the general public.
-					p A major part of my role was developing, promoting and maintaining our website. The site allowed users to view information about the team, our sponsors, and upcoming events, as well as contact our team via email or Facebook.
-					span.portfolio__item__description__date September 2013 - March 2014
-				.col-6.portfolio__item__image
-					a(href="img/atomicrushf1.jpg", data-lightbox="atomicrushf1", data-title="Home page of the Atomic Rush F1 website.")
-						img(src="img/atomicrushf1.jpg", alt="Atomic Rush F1")
-		section.footer
-			a.button.button--white(href="mailto:me@maxcmiller.com") Get in touch
-			div.footer__bottom
-				a(href="#top").footer__bottom__logo
-					svg
-						use(xlink:href="#icon-logo-white")
-				span.footer__bottom__copyright &copy; Max C Miller 2019
-		script(src="bundle.js")
+  head
+    title Max C Miller
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="main.css")
+    include partials/favicons.pug
+    script(async src="//www.google-analytics.com/analytics.js")
+  body
+    include ../img/svg.svg
+    .row#top
+      .col-golden-large
+        section.hero
+          .hero__content
+            a.hero__content__logo(href="#")
+              svg
+                use(xlink:href="#icon-logo-white")
+            a.button.button--white(href="#portfolio") View my portfolio
+      .col-golden-small
+        section.intro
+          h2.intro__text Hey, I'm <span>Max Miller</span>, a <span>student</span>, <span>developer</span> and <span>web designer</span> from <span>Brisbane, Australia</span>.
+          ul.intro__icons
+            //- Designed by Freepik
+            li.intro__icons__icon
+              a(href="http://github.com/einkelflugle")
+                svg
+                  use(xlink:href="#icon-github")
+            li.intro__icons__icon
+              a(href="http://twitter.com/max_cmiller")
+                svg
+                  use(xlink:href="#icon-twitter")
+            li.intro__icons__icon
+              a(href="mailto:me@maxcmiller.com")
+                svg
+                  use(xlink:href="#icon-email")
+    .row.about
+      .col-golden-large
+        .text
+          h2 About me
+          p My name is Max Miller, and I enjoy building websites. I specialise in creating unique experiences that look great and function beautifully across all devices.
+          p I also love to code. Most of my projects are on <a href="http://github.com/einkelflugle">GitHub</a> if you'd like to check them out. <i>Warning: projects are in varying stages of completeness!</i>
+      .col-golden-small
+        .row
+          .col-6
+            img.about__image(src="img/profile.jpg", alt="Max C Miller")
+    .row.skills
+      .col-golden-small
+        .text
+          h2 Skills
+          p I think it's important to keep learning every day. That's why I'm always looking at better, faster and more efficient ways to do things, like picking up a new framework or using a new build tool.
+          p Here are a few of the technologies I work with:
+          ul.skills__list
+            +rating(5, 'HTML & CSS')
+            +rating(4, 'Ruby on Rails')
+            +rating(3, 'JavaScript')
+            +rating(4, 'Java')
+      .col-golden-large.skills__background
+    section.cta
+      a.button.pull-right(href="http://github.com/einkelflugle") My GitHub
+      a.button.button--primary(href="mailto:me@maxcmiller.com") Get in touch
+    section.portfolio#portfolio
+      .row.portfolio__item
+        .col-6.portfolio__item__description
+          h2 Metalithic
+          h3 Design and front-end development
+          p Metalithic is an art studio from Perth, Western Australia. They desired a way to show off their handcrafted mixed-media pieces on the web. The website allows customers to view individual pieces through <a href="img/metalithic2_v2.jpg" data-lightbox="metalithic" data-title="Gallery page">the gallery</a>, learn more about the fascinating process behind the pieces, and enquire about purchasing.
+          .button-group.button-group--center.button-group--js.button-group--small(aria-label="Select version of website")
+            a.button.button--primary(href="#0", id="show_metalithic_v1") v1
+            a.button(href="#0", id="show_metalithic_v2") v2
+          p#metalithic_v1 The initial version of the Metalithic site was built using a variety of modern web technologies. <a href="http://staceyapp.com">Stacey</a>, a PHP-based flat-file CMS, was used for the back end. I used <a href="http://sass-lang.com">Sass</a> as the preprocessor, compiled and minified by powerful task runner <a href="http://gruntjs.com">Grunt</a>.
+          span#metalithic_v2
+            p In 2018, the site was upgraded to use <a href="http://wordpress.org">WordPress</a>. This involved developing a custom WP theme for the site based on <a href="http://getbootstrap.com">Bootstrap</a>. The upgraded site utilises Google reCAPTCHA and SendGrid for better contact form notifications.
+            p I improved performance dramatically by leveraging WordPress caching and browser caching, compressing all assets with Apache's mod_deflate, and minifying CSS and JavaScript files.
+          span.portfolio__item__description__date March 2015 - present
+          a.button.button--primary(href="http://www.metalithic.com.au") Visit website
+        .col-6.portfolio__item__image
+          a(href="img/metalithic_v2.jpg", data-lightbox="metalithic", data-title="Home page")
+            img(src="img/metalithic_v2.jpg", alt="Metalithic (metalithic.com.au)")
+          a.hidden(href="img/metalithic2_v2.jpg", data-lightbox="metalithic", data-title="Gallery page")
+          a.hidden(href="img/metalithic3_v2.jpg", data-lightbox="metalithic", data-title="Product page")
+      .row.portfolio__item
+        .col-6.portfolio__item__image
+          a(href="img/craftoid.jpg", data-lightbox="craftoid", data-title="Craftoid, a web app for sharing creations in the PC game Robocraft.")
+            img(src="img/craftoid.jpg", alt="Craftoid")
+          a.hidden(href="img/craftoid2.jpg", data-lightbox="craftoid", data-title="Robot page")
+        .col-6.portfolio__item__description.mobile-lower-order
+          h2 Craftoid
+          h3 Design, front- and back-end development
+          p Craftoid is a web application for the popular indie game <a href="http://robocraftgame.com">Robocraft</a>. It allows users to share their awesome creations made with the in-game editor. Some of the main features include:
+          ul
+            li Sign in and Sign up
+            li Competitions with voting on submissions
+            li Ability to 'favourite' other users' creations
+            li Browse creations by time, popularity, Tier, or category
+            li Submit comments
+          p The application is built on <a href="http://rubyonrails.org">Ruby on Rails</a>, with a <a href="http://www.postgresql.org">PostgreSQL</a> database. I used <a href="http://heroku.com">heroku</a> for deployment, and the entire application and related assets are managed with <a href="http://git-scm.com">Git</a> version control.
+          span.portfolio__item__description__date August - September 2014
+          a.button.button--primary(href="http://github.com/einkelflugle/craftoid") View GitHub repository
+      .row.portfolio__item
+        .col-6.portfolio__item__description
+          h2 Atomic Rush F1
+          h3 Front-end development and marketing
+          p Atomic Rush was a school team participating in the <a href="http://rea.org.au/f1-in-schools/">F1 in Schools</a> Technology Challenge. As Marketing Advisor, my role involved presenting our team's image to potential sponsors and the general public.
+          p A major part of my role was developing, promoting and maintaining our website. The site allowed users to view information about the team, our sponsors, and upcoming events, as well as contact our team via email or Facebook.
+          span.portfolio__item__description__date September 2013 - March 2014
+        .col-6.portfolio__item__image
+          a(href="img/atomicrushf1.jpg", data-lightbox="atomicrushf1", data-title="Home page of the Atomic Rush F1 website.")
+            img(src="img/atomicrushf1.jpg", alt="Atomic Rush F1")
+    section.footer
+      a.button.button--white(href="mailto:me@maxcmiller.com") Get in touch
+      div.footer__bottom
+        a(href="#top").footer__bottom__logo
+          svg
+            use(xlink:href="#icon-logo-white")
+        span.footer__bottom__copyright &copy; Max C Miller 2019
+    script(src="bundle.js")
