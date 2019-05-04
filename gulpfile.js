@@ -85,6 +85,11 @@ function clean() {
   return del(paths.del)
 }
 
+/* Clear the cache */
+function clear() {
+  return cache.clearAll()
+}
+
 function pugDev() {
   return gulp
     .src(paths.html.src)
@@ -154,9 +159,11 @@ function imgBuild() {
     .src(paths.img.src)
     .pipe(cache(imagemin([
       imagemin.gifsicle({interlaced: true}),
-      imagemin.jpegtran({progrssive: true}),
+      imagemin.jpegtran({progressive: true}),
       imagemin.optipng({optimizationLevel: 5})
-    ])))
+    ],
+    {verbose: true}
+    )))
     .pipe(gulp.dest(paths.img.dest))
 }
 
@@ -218,6 +225,9 @@ const server = gulp.parallel(watch, serve)
 
 /* Remove all generated/minified assets and clean the site directory */
 exports.clean = clean
+
+/* Clears the cache */
+exports.clear = clear
 
 /* Build the full site for deployment */
 exports.build = build
